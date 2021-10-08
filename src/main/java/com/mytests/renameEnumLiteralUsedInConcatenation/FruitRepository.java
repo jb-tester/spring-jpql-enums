@@ -5,6 +5,8 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 public interface FruitRepository extends CrudRepository<Fruit, Long> {
+
+    // rename APPLE to APPLE<any_suffix> to reproduce the issue
     @Query(
         "SELECT f FROM Fruit f "
             + "WHERE f.id = :id "
