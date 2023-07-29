@@ -15,6 +15,7 @@ public class BasicEntity {
 
     @ElementCollection
     public Set<Test> testSet = new HashSet<>();
+
     public enum Test {
         A, B, C, D
     }
