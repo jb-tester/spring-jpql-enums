@@ -1,13 +1,11 @@
 package com.mytests.useSingleEnumForEnumCollectionParameter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ElementCollection;
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Table(name = "basic_entities", schema = "enums")
 public class BasicEntity {
     @Id
     @GeneratedValue

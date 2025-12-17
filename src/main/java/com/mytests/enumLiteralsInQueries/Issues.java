@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "issues", schema = "jbtests")
+@Table(name = "issues", schema = "enums")
 
 public class Issues {
     public static final String PATTERN = "table";

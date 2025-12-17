@@ -11,7 +11,7 @@ public interface IssuesRepository extends CrudRepository<Issues, Long> {
 
 
     // https://youtrack.jetbrains.com/issue/IDEA-160992 - Show error when enum type passed as argument into native JPA query
-    @Query(value = "select * from jbtests.issues where state = :state", nativeQuery = true)
+    @Query(value = "select * from enums.issues where state = :state", nativeQuery = true)
     List<Issues> findByState(@Param("state") Issues.StateEnum state);
 
     @Query("SELECT o FROM Issues o WHERE o.priority = 'High' OR o.priority = com.mytests.enumLiteralsInQueries.PriorityEnum.Medium")
