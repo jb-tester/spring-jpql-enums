@@ -12,6 +12,7 @@ public class BasicEntity {
     public Long id;
 
     @ElementCollection
+    @Enumerated(EnumType.STRING)
     public Set<Test> testSet = new HashSet<>();
 
     public enum Test {

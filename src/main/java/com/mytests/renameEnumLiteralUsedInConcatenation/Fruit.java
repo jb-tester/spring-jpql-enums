@@ -1,9 +1,6 @@
 package com.mytests.renameEnumLiteralUsedInConcatenation;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "fruits", schema = "enums")
@@ -14,6 +11,7 @@ public class Fruit {
 
     private int quantity;
 
+    @Enumerated(EnumType.STRING)
     private FruitType type;
 
     public Long getId() {

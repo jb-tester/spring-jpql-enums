@@ -32,7 +32,9 @@ public class Issues {
     @Column(name = "state")
     @Enumerated(EnumType.STRING)
     private StateEnum state;
-
+    @Basic
+    @Column(name = "type")
+    private TypeEnum type;
 
     public Long getId() {
         return id;
@@ -88,32 +90,28 @@ public class Issues {
         this.state = state;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Issues issues = (Issues) o;
-        return Objects.equals(id, issues.id) && Objects.equals(title, issues.title) && Objects.equals(author, issues.author) && Objects.equals(description, issues.description) && priority == issues.priority && state == issues.state;
+    public TypeEnum getType() {
+        return type;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, title, author, description, priority, state);
+    public void setType(TypeEnum type) {
+        this.type = type;
+    }
+
+    public enum StateEnum {
+        Open, Closed
     }
 
     @Override
     public String toString() {
         return "Issues{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", author='" + author + '\'' +
-                ", description='" + description + '\'' +
-                ", priority=" + priority.name() +
-                ", state=" + state.name() +
-                '}';
-    }
-
-    public enum StateEnum {
-        Open, Closed
+               "id=" + id +
+               ", title='" + title + '\'' +
+               ", author='" + author + '\'' +
+               ", description='" + description + '\'' +
+               ", priority=" + priority +
+               ", state=" + state +
+               ", type=" + type +
+               '}';
     }
 }
